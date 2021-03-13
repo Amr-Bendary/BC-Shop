@@ -1,0 +1,37 @@
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-size: cover;
+}
+.btn-sm {
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    margin-right: 10px;
+    border-radius: 99px;
+    padding: .3rem .7rem;
+}
+table {
+    border-radius: 30px;
+    background-color: white;
+}
+tr, th, td, thead, tbody, tfoot {
+    border: none !important;
+}
+td {
+    vertical-align: middle;
+    padding: 0;
+}
+tr td:last-of-type {
+    padding-right: 1rem;
+}
+tbody {
+    border-top: 2px solid var(--clr-1) !important;
+}
+
+tbody tr {
+    border-bottom: 2px solid var(--clr-1) !important;
+}
+/* tbody tr:last-of-type {
+    border: none !important;
+} */

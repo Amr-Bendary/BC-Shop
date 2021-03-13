@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+$primary-color: #c1d62e;
+
+:root {
+    --clr-1: #edeef4;
+    --clr-2: #9d9d9f;
+    --clr-3: #242424;
+    --clr-4: #c3b4fe;
+    --clr-5: #967cfb;
+    --clr-6: #5651e3;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-3);
+}
+
+
+*:hover,
+*:focus,
+*:active {
+    outline: none !important;
+    box-shadow: unset !important;
+}
+body {
+    padding-top: 112px;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: $primary-color;
+}
+
+.list-group-item.active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

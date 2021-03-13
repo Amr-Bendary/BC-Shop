@@ -1,0 +1,364 @@
+* {
+    transition: .2s ease-in-out;
+}
+
+.navbar {
+    background-color: #fff;
+    padding: 1rem;
+    height: 92px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+}
+
+.hasIcon:first-of-type {
+    text-align: center;
+}
+
+.hasIcon:first-of-type i {
+    font-size: 50px;
+    color: var(--clr-3);
+}
+
+.hasIcon:first-of-type:hover i {
+    color: var(--clr-6);
+}
+
+.container {
+    position: relative;
+    background-color: var(--clr-1);
+}
+
+.searchBar {
+    border: none;
+    background: var(--clr-1);
+    border-radius: 8px;
+}
+
+.searchIco {
+    background: var(--clr-1) !important;
+    border: none !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.userPic {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.dropdown {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+
+.shift {
+    transform: translateX(-300px);
+}
+
+.sideNav {
+    width: 300px;
+    position: fixed;
+    top: 92px;
+    right: 0;
+    transform: translateX(300px);
+    height: calc(100vh - 92px);
+    z-index: 9999;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.sideNavNav {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: calc(100% - 32px);
+    height: max-content;
+    position: absolute;
+    top: 0;
+}
+
+.hasCats {
+    padding: 1rem 0;
+    display: none;
+    background-color: var(--clr-1);
+}
+
+.hasCats::after {
+    display: none;
+}
+
+.disappear {
+    display: initial;
+
+}
+
+.sideNavNav li {
+    border-radius: 10px;
+    position: relative;
+}
+
+.sideNavNav li::after {
+    content: '';
+    width: 6px;
+    height: 70%;
+    background-color: var(--clr-6);
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    transform: translateY(-50%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+#bdg {
+    background-color: #fbc02d;
+    color: var(--clr-3);
+}
+
+.sideNavNav li:first-of-type {
+    padding-top: 200px;
+    width: calc(100% - 2rem);
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.sideNavNav li:first-of-type p {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.sideNavNav li:first-of-type:hover {
+    background-color: #fff;
+}
+
+.sideNavNav li:first-of-type::after {
+    display: none;
+}
+
+.userPicBig {
+    margin: 1rem 0 10px;
+    width: 100px;
+    height: 100px;
+}
+
+
+.sideNavNav li:hover {
+    background-color: var(--clr-1);
+}
+
+.sideNavNav li:hover>a {
+    color: var(--clr-6);
+}
+
+.sideNavNav li:hover a i {
+    background-color: var(--clr-6);
+    color: var(--clr-1);
+}
+
+.sideNavNav li:hover::after {
+    opacity: 1;
+}
+
+.sideNavNav li>a {
+    font-size: 1rem;
+    color: var(--clr-3);
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    padding: .5rem;
+    font-weight: bold;
+}
+
+.sideNavNav li i {
+    padding: 0;
+    color: var(--clr-3);
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
+    position: relative;
+    font-size: 20px;
+}
+
+.cart {
+    position: relative;
+}
+
+.bdg {
+    position: absolute;
+    top: 0px;
+    left: 38px;
+}
+
+.categoriesList {
+    border: none !important;
+    width: 230px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.categoriesList a {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: .9rem;
+    font-weight: bold;
+    /* color: var(--clr-2); */
+}
+
+/* .categoriesList a:hover {
+    color: var(--clr-6);
+} */
+
+.list-group-item:hover,
+.list-group-item:focus,
+.list-group-item:active,
+.list-group-item.active {
+    background-color: var(--clr-1);
+    color: var(--clr-6);
+}
+
+.categoriesList a:last-of-type {
+    margin: 0;
+}
+
+/* .showCats {
+    left: calc(100% + 36px);
+} */
+
+.hasIcon {
+    padding: 0 !important;
+    height: 50px;
+    width: 60px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.hasIcon:first-of-type i {
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.togglerIcon {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: var(--clr-3);
+    border-radius: 99px;
+    top: 23px;
+    transform: translateX(-50%);
+    left: calc(50% - 5px);
+}
+
+.hasIcon:hover,
+.hasIcon:focus,
+.hasIcon:active {
+    background-color: var(--clr-1);
+}
+
+.hasIcon:hover .togglerIcon,
+.hasIcon:focus .togglerIcon,
+.hasIcon:active .togglerIcon {
+    background-color: var(--clr-6);
+}
+
+.hasIcon:hover .togglerIcon::before,
+.hasIcon:focus .togglerIcon::before,
+.hasIcon:active .togglerIcon::before {
+    background-color: var(--clr-6);
+}
+
+.hasIcon:hover .togglerIcon::after,
+.hasIcon:focus .togglerIcon::after,
+.hasIcon:active .togglerIcon::after {
+    background-color: var(--clr-6);
+}
+
+.togglerIcon::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: var(--clr-3);
+    border-radius: 99px;
+    top: -12px;
+    transition: .2s ease-in-out;
+}
+
+.togglerIcon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: var(--clr-3);
+    border-radius: 99px;
+    top: 12px;
+    transition: .2s ease-in-out;
+}
+
+.togglerIconOpen {
+    background-color: transparent !important;
+}
+
+.togglerIconOpen::before {
+    top: 0;
+    left: 0;
+    background-color: var(--clr-6) !important;
+    transform: rotate(45deg);
+}
+
+.togglerIconOpen::after {
+    top: 0;
+    left: 0;
+    background-color: var(--clr-6) !important;
+    transform: rotate(-45deg);
+}
+
+.active {
+    background-color: var(--clr-1);
+    color: var(--clr-6);
+}
+
+.showSideNav {
+    transform: translateX(0);
+}
+
+.adminControls a i {
+    background-color: #fbc02d !important;
+}
+
+.adminControls:hover a {
+    color: var(--clr-3) !important;
+}
+
+.adminControls:hover a i {
+    color: var(--clr-3) !important;
+}
+
+.adminControls::after {
+    background-color: #fbc02d !important;
+}

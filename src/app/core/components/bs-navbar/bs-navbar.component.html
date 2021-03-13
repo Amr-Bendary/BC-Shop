@@ -1,0 +1,125 @@
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link hasIcon" routerLink="/shopping-cart">
+        <i class="fa fa-shopping-bag"></i>
+        <span *ngIf="cart$ | async as cart" class="bdg">
+          <span id="bdg" class="badge badge-warning badge-pill" *ngIf="cart.totalItemsCount>0">
+            {{ cart.totalItemsCount }}
+          </span>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <div class="navbar-nav" style="width: 50%; justify-content: center;">
+    <div class="nav-item" style="cursor: default;">
+      <h3 class="nav-link" style="margin: auto; font-size: 1.6rem;" routerLink="/">BottleCapShop</h3>
+    </div>
+  </div>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a id="tglr" class="nav-link hasIcon" (click)="toggleSideNav()">
+        <div class="togglerIcon"></div>
+      </a>
+    </li>
+  </ul>
+  <!-- <ul class="navbar-nav">
+      <ng-template #anonymousUser>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ng-template>
+      <li class="nav-item dropdown" ngbDropdown *ngIf="appUser; else anonymousUser">
+        <ng-container *ngIf="appUser">
+          <a class="nav-link dropdown-toggle btn" ngbDropdownToggle id="dropdown01" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center;">
+            <div class="userPic" style="background-image: url({{appUser.picUrl}});"></div>
+            {{ appUser.name }}
+          </a>
+        </ng-container>
+        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdown01">
+          <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+          <ng-container *ngIf="appUser.isAdmin">
+            <a class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
+            <a class="dropdown-item" routerLink="admin/products">Manage Products</a>
+          </ng-container>
+          <a class="btn dropdown-item" (click)="logout()">Log Out</a>
+        </div>
+      </li>
+    </ul> -->
+</nav>
+<nav class="navbar navbar-expand-md navbar-light sideNav">
+  <ul class="navbar-nav sideNavNav">
+    <li class="nav-item">
+      <ng-container *ngIf="appUser">
+        <div class="userPic userPicBig" style="background-image: url({{appUser.picUrl}});"></div>
+        <p>{{appUser.name}}</p>
+      </ng-container>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+    </li>
+    <ng-container *ngIf="appUser && appUser.isAdmin">
+      <li class="nav-item adminControls">
+        <a class="nav-link" routerLink="admin/orders">
+          <i class="fa fa-lock"></i>
+          Manage Orders
+        </a>
+      </li>
+      <li class="nav-item adminControls">
+        <a class="nav-link" routerLink="admin/products">
+          <i class="fa fa-lock"></i>
+          Manage Products
+        </a>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="!appUser">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">
+          <i class="fa fa-user"></i>
+          Login
+        </a>
+      </li>
+    </ng-container>
+    <li class="nav-item">
+      <a class="nav-link cart" routerLink="/shopping-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span *ngIf="cart$ | async as cart" class="bdg">
+          <span id="bdg" class="badge badge-warning badge-pill" *ngIf="cart.totalItemsCount>0">
+            {{ cart.totalItemsCount }}
+          </span>
+        </span>
+        Shopping Cart
+      </a>
+    </li>
+    <ng-container *ngIf="isHome()">
+      <li id="categoriesToggler" class="nav-item">
+        <a class="nav-link" (click)="toggleCategories()">
+          <i class="fa fa-list"></i>
+          Categories
+        </a>
+      </li>
+      <li class="nav-item hasCats" *ngIf="isExpanded">
+        <div id="cats" class="list-group categoriesList">
+          <a class="list-group-item list-group-item-action" [class.active]="!category" routerLink="/">All Categories</a>
+          <a class="list-group-item list-group-item-action" routerLink="/" *ngFor="let c of categories$ | async"
+            [queryParams]="{ category: c.key }" [class.active]="category === c.key">{{ catName(c.name) }}</a>
+        </div>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="appUser">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/my/orders">
+          <i class="fa fa-truck"></i>
+          My Orders
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()"><i class="fa fa-sign-in"></i>Logout</a>
+      </li>
+    </ng-container>
+  </ul>
+</nav>

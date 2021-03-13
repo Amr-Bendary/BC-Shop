@@ -1,0 +1,9 @@
+<div class="row no-gutters">
+    <button
+      (click)="removeFromCart()"
+      class="cardBtn cardBtnLeft"><i class="fa fa-minus"></i></button>
+    <div>{{ shoppingCart.getQuantity(product) }} in cart</div>
+    <button
+      (click)="addToCart()"
+      class="cardBtn"><i class="fa fa-plus"></i></button>
+</div>

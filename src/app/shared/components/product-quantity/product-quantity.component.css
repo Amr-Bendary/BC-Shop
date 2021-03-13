@@ -1,0 +1,27 @@
+.cardBtn {
+    background-color: var(--clr-1);
+    color: var(--clr-6);
+    padding: .9rem 1.8rem;
+    border: none;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.cardBtnLeft {
+    border-radius: 0;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.cardBtn:hover, .cardBtn:focus, .cardBtn:active {
+    background-color: var(--clr-4);
+}
+.row div {
+    color: var(--clr-2);
+    font-size: .9rem;
+    font-weight: 500;
+}
+.no-gutters {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+}
